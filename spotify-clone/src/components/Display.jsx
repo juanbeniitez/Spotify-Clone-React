@@ -1,6 +1,6 @@
 import React from "react";
 import {Routes,  Route } from 'react-router-dom'
-import DisplayHome from "./DisplayHome";
+import DisplayHome from "@components/DisplayHome";
 
 const Display = () => {
     return(
