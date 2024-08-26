@@ -11,9 +11,7 @@ const port = process.env.PORT || 5000;
 // Establece conexión con la base de datos y cloudinary
 connectDB();
 connectCloudinary();
-//app.disable("x-powered-by");    
-
-
+app.disable("x-powered-by");
 
 // middlewares
 app.use(express.json());
@@ -21,7 +19,6 @@ app.use(cors());
 
 // initializing routes
 app.use("/api/song", songRouter)
-
 
 app.get('/', (req, res) => res.send("API Working"))
 
