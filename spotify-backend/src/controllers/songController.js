@@ -37,8 +37,25 @@ const addSong = async (req, res) => {
     }
 }
 
-const listSong = async () => {
+const listSong = async (req, res) => {
+    try {
+        const allSongs = await songModel.find({});
+        res.json({ succes: true, songs: allSongs });
+    } catch (error) {
 
+        res.json({ succes: false, message: error });
+
+    }
 }
 
-export { addSong, listSong };
+
+const removeSong = async (req, res) => {
+    try {
+        await songModel.findByIdAndDelete(req.body.id);
+        res.json({ succes: true, message: "Song removed" });
+    } catch (error) {
+        res.json({ succes: false });
+    }
+}
+
+export { addSong, listSong, removeSong };
