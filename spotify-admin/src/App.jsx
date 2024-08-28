@@ -7,7 +7,9 @@ import AddAlbum from "./pages/AddAlbum";
 import ListSong from "./pages/ListSong";
 import ListAlbum from "./pages/ListAlbum";
 import Sidebar from "./components/Sidebar";
+import NavBar from "./components/NavBar";
 
+export const url = 'http://localhost:5000'
 
 const App = () => {
   return(
@@ -15,6 +17,7 @@ const App = () => {
       <ToastContainer />
       <Sidebar/>
       <div className="flex-1 h-screen overflow-y-scroll bg-[#F3FFF7]">
+        <NavBar/>
         <div className="pt-8 pl-5 sm:pt-12 sm:pl-12">
           <Routes>
             <Route path="/add-song" element={ <AddSong/>}/>
